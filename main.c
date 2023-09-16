@@ -78,7 +78,7 @@ int	main(void)
 	while (1)
 	{
 		line = get_next_line(sid_fd);
-		if (line == NULL)
+		if (line == NULL || starts_with(line, "[RP"))
 			exit(0);
 		if(starts_with(line, "[RJ") || starts_with(line, "[RO"))
 		{
