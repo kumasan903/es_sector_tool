@@ -69,25 +69,473 @@ static void	write_wrapper(int output_fd, char *airport_code, char *rwy_name, cha
 	write(output_fd, "\n", 1);
 }
 
+void	write_star(char *airport_code, char *rwy, char *sid_name, char *fixs, int output_fd)
+{
+	ft_putstr_fd("STAR:", output_fd);
+	ft_putstr_fd(airport_code, output_fd);
+	ft_putchar_fd(':', output_fd);
+	ft_putstr_fd(rwy, output_fd);
+	ft_putchar_fd(':', output_fd);
+	ft_putstr_fd(fixs, output_fd);
+	ft_putchar_fd('\n', output_fd);
+}
+
 void	all_rwy_star(int output_fd, char *airport_code, char *sid_name, char *fixs)
 {
 	size_t	i;
-	char	*rjah[] = {"03R", "03L", "21R", "21L", NULL};
+	char	*RJAH[] = {"03L", "21R", "03R", "21L", NULL};
+	char	*RJAW[] = {"07", "25", NULL};
+	char	*RJBB[] = {"06R", "24L", "06L", "24R", NULL};
+	char	*RJBE[] = {"09", "27", NULL};
+	char	*RJCM[] = {"18", "36", NULL};
+	char	*RJCN[] = {"08", "26", NULL};
+	char	*RJCW[] = {"08", "26", NULL};
+	char	*RJDA[] = {"13", "31", NULL};
+	char	*RJDT[] = {"14", "32", NULL};
+	char	*RJDU[] = {"18", "36", NULL};
+	char	*RJEO[] = {"13", "31", NULL};
+	char	*RJFA[] = {"12", "30", NULL};
+	char	*RJFC[] = {"14", "32", NULL};
+	char	*RJFF[] = {"16", "34", NULL};
+	char	*RJFM[] = {"09", "27", NULL};
+	char	*RJFO[] = {"09", "19", NULL};
+	char	*RJFS[] = {"11", "29", NULL};
+	char	*RJFT[] = {"07", "25", NULL};
+	char	*RJFU[] = {"14", "32", NULL};
+	char	*RJFY[] = {"08R", "26L", "06L", "26R", NULL};
+	char	*RJKN[] = {"01", "19", NULL};
+	char	*RJNA[] = {"16", "34", NULL};
+	char	*RJNO[] = {"08", "26", NULL};
+	char	*RJNS[] = {"12", "30", NULL};
+	char	*RJNT[] = {"02", "20", NULL};
+	char	*RJNW[] = {"07", "25", NULL};
+	char	*RJNY[] = {"09", "27", NULL};
+	char	*RJOA[] = {"10", "28", NULL};
+	char	*RJOK[] = {"14", "32", NULL};
+	char	*RJOM[] = {"14", "32", NULL};
+	char	*RJOO[] = {"14R", "32L", "14L", "32R", NULL};
+	char	*RJOS[] = {"11", "29", NULL};
+	char	*RJOT[] = {"08", "26", NULL};
+	char	*RJOW[] = {"11", "29", NULL};
+	char	*RJSA[] = {"06", "24", NULL};
+	char	*RJSF[] = {"01", "19", NULL};
+	char	*RJSK[] = {"10", "28", NULL};
+	char	*RJSS[] = {"09", "27", "12", "30", NULL};
+	char	*RJTK[] = {"02", "20", NULL};
+	char	*RJTT[] = {"16L", "34R", "16R", "34L", "04", "22", "05", "23", NULL};
+	char	*RJTU[] = {"01", "19", NULL};
+	char	*ROAH[] = {"18L", "36R", "18R", "36L", NULL};
+	char	*ROIG[] = {"04", "22", NULL};
+	char	*RORY[] = {"14", "32", NULL};
 
 	if (starts_with(airport_code, "RJAH"))
 	{
 		i = 0;
-		while (rjah[i] != NULL)
+		while (RJAH[i] != NULL)
 		{
-			write(output_fd, "STAR:", 5);
-			write(output_fd, airport_code, ft_strlen_s(airport_code));
-			write(output_fd, ":", 1);
-			write(output_fd, rjah[i], ft_strlen_s(rjah[i]));
-			write(output_fd, ":", 1);
-			write(output_fd, fixs, ft_strlen_s(fixs));
-			write(output_fd, "\n", 1);
+			write_star(airport_code, RJAH[i], sid_name, fixs, output_fd);
 			i++;
 		}
+	}
+	else if (starts_with(airport_code, "RJAW"))
+	{
+		i = 0;
+		while (RJAW[i] != NULL)
+		{
+			write_star(airport_code, RJAW[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJBB"))
+	{
+		i = 0;
+		while (RJBB[i] != NULL)
+		{
+			write_star(airport_code, RJBB[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJBE"))
+	{
+		i = 0;
+		while (RJBE[i] != NULL)
+		{
+			write_star(airport_code, RJBE[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJCM"))
+	{
+		i = 0;
+		while (RJCM[i] != NULL)
+		{
+			write_star(airport_code, RJCM[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJCN"))
+	{
+		i = 0;
+		while (RJCN[i] != NULL)
+		{
+			write_star(airport_code, RJCN[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJCW"))
+	{
+		i = 0;
+		while (RJCW[i] != NULL)
+		{
+			write_star(airport_code, RJCW[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJDA"))
+	{
+		i = 0;
+		while (RJDA[i] != NULL)
+		{
+			write_star(airport_code, RJDA[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJDT"))
+	{
+		i = 0;
+		while (RJDT[i] != NULL)
+		{
+			write_star(airport_code, RJDT[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJDU"))
+	{
+		i = 0;
+		while (RJDU[i] != NULL)
+		{
+			write_star(airport_code, RJDU[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJEO"))
+	{
+		i = 0;
+		while (RJEO[i] != NULL)
+		{
+			write_star(airport_code, RJEO[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJFA"))
+	{
+		i = 0;
+		while (RJFA[i] != NULL)
+		{
+			write_star(airport_code, RJFA[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJFC"))
+	{
+		i = 0;
+		while (RJFC[i] != NULL)
+		{
+			write_star(airport_code, RJFC[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJFF"))
+	{
+		i = 0;
+		while (RJFF[i] != NULL)
+		{
+			write_star(airport_code, RJFF[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJFM"))
+	{
+		i = 0;
+		while (RJFM[i] != NULL)
+		{
+			write_star(airport_code, RJFM[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJFO"))
+	{
+		i = 0;
+		while (RJFO[i] != NULL)
+		{
+			write_star(airport_code, RJFO[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJFS"))
+	{
+		i = 0;
+		while (RJFS[i] != NULL)
+		{
+			write_star(airport_code, RJFS[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJFT"))
+	{
+		i = 0;
+		while (RJFT[i] != NULL)
+		{
+			write_star(airport_code, RJFT[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJFU"))
+	{
+		i = 0;
+		while (RJFU[i] != NULL)
+		{
+			write_star(airport_code, RJFU[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJFY"))
+	{
+		i = 0;
+		while (RJFY[i] != NULL)
+		{
+			write_star(airport_code, RJFY[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJKN"))
+	{
+		i = 0;
+		while (RJKN[i] != NULL)
+		{
+			write_star(airport_code, RJKN[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJNA"))
+	{
+		i = 0;
+		while (RJNA[i] != NULL)
+		{
+			write_star(airport_code, RJNA[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJNO"))
+	{
+		i = 0;
+		while (RJNO[i] != NULL)
+		{
+			write_star(airport_code, RJNO[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJNS"))
+	{
+		i = 0;
+		while (RJNS[i] != NULL)
+		{
+			write_star(airport_code, RJNS[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJNT"))
+	{
+		i = 0;
+		while (RJNT[i] != NULL)
+		{
+			write_star(airport_code, RJNT[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJNW"))
+	{
+		i = 0;
+		while (RJNW[i] != NULL)
+		{
+			write_star(airport_code, RJNW[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJNY"))
+	{
+		i = 0;
+		while (RJNY[i] != NULL)
+		{
+			write_star(airport_code, RJNY[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJOA"))
+	{
+		i = 0;
+		while (RJOA[i] != NULL)
+		{
+			write_star(airport_code, RJOA[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJOK"))
+	{
+		i = 0;
+		while (RJOK[i] != NULL)
+		{
+			write_star(airport_code, RJOK[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJOM"))
+	{
+		i = 0;
+		while (RJOM[i] != NULL)
+		{
+			write_star(airport_code, RJOM[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJOO"))
+	{
+		i = 0;
+		while (RJOO[i] != NULL)
+		{
+			write_star(airport_code, RJOO[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJOS"))
+	{
+		i = 0;
+		while (RJOS[i] != NULL)
+		{
+			write_star(airport_code, RJOS[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJOT"))
+	{
+		i = 0;
+		while (RJOT[i] != NULL)
+		{
+			write_star(airport_code, RJOT[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJOW"))
+	{
+		i = 0;
+		while (RJOW[i] != NULL)
+		{
+			write_star(airport_code, RJOW[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJSA"))
+	{
+		i = 0;
+		while (RJSA[i] != NULL)
+		{
+			write_star(airport_code, RJSA[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJSF"))
+	{
+		i = 0;
+		while (RJSF[i] != NULL)
+		{
+			write_star(airport_code, RJSF[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJSK"))
+	{
+		i = 0;
+		while (RJSK[i] != NULL)
+		{
+			write_star(airport_code, RJSK[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJSS"))
+	{
+		i = 0;
+		while (RJSS[i] != NULL)
+		{
+			write_star(airport_code, RJSS[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJTK"))
+	{
+		i = 0;
+		while (RJTK[i] != NULL)
+		{
+			write_star(airport_code, RJTK[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJTT"))
+	{
+		i = 0;
+		while (RJTT[i] != NULL)
+		{
+			write_star(airport_code, RJTT[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RJTU"))
+	{
+		i = 0;
+		while (RJTU[i] != NULL)
+		{
+			write_star(airport_code, RJTU[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "ROAH"))
+	{
+		i = 0;
+		while (ROAH[i] != NULL)
+		{
+			write_star(airport_code, ROAH[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "ROIG"))
+	{
+		i = 0;
+		while (ROIG[i] != NULL)
+		{
+			write_star(airport_code, ROIG[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else if (starts_with(airport_code, "RORY"))
+	{
+		i = 0;
+		while (RORY[i] != NULL)
+		{
+			write_star(airport_code, RORY[i], sid_name, fixs, output_fd);
+			i++;
+		}
+	}
+	else
+	{
+		write_star(airport_code, "ALL", sid_name, fixs, output_fd);
+		/*
+		ft_putstr_fd("STAR:", output_fd);
+		ft_putstr_fd(airport_code, output_fd);
+		ft_putchar_fd(':', output_fd);
+		ft_putstr_fd("ALL", output_fd);
+		ft_putchar_fd(':', output_fd);
+		ft_putstr_fd(fixs, output_fd);
+		ft_putchar_fd('\n', output_fd);
+		*/
 	}
 }
 
@@ -118,7 +566,6 @@ int	main(void)
 		printf("datファイルの読み込みに失敗しました。");
 		exit(1);
 	}
-	puts("test1");
 	while (1)
 	{
 		line = get_next_line(sid_fd);
