@@ -76,6 +76,8 @@ void	write_star(char *airport_code, char *rwy, char *sid_name, char *fixs, int o
 	ft_putchar_fd(':', output_fd);
 	ft_putstr_fd(rwy, output_fd);
 	ft_putchar_fd(':', output_fd);
+	ft_putstr_fd(sid_name, output_fd);
+	ft_putchar_fd(':', output_fd);
 	ft_putstr_fd(fixs, output_fd);
 	ft_putchar_fd('\n', output_fd);
 }
